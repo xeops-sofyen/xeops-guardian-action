@@ -1,11 +1,13 @@
-# 🛡️ XeOps Guardian - AI Ethical Hacking for CI/CD
+# 🛡️ XeOps Guardian - AI Ethical Hacking for Developers
+
+> **Secure Your Code. Exploit Theirs.**
 
 [![XeOps](https://img.shields.io/badge/Powered%20by-XeOps.ai-red)](https://www.xeops.ai)
 [![Marketplace](https://img.shields.io/badge/GitHub-Marketplace-blue)](https://github.com/marketplace/actions/xeops-guardian)
 [![VS Code Extension](https://img.shields.io/badge/VS%20Code-Extension-blue)](https://marketplace.visualstudio.com/items?itemName=xeops.xeops-guardian)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-AI-powered vulnerability scanning and exploit generation for ethical hackers and security teams. OWASP Top 10, verified PoCs, and compliance reporting.
+AI-powered vulnerability scanning with verified exploit generation for ethical hackers and security teams. OWASP Top 10 coverage, proof-of-concept generation, and compliance reporting capabilities.
 
 ## 🚀 Features
 
