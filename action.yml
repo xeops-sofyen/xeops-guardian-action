@@ -1,0 +1,55 @@
+name: 'XeOps Guardian - AI Ethical Hacking for CI/CD'
+description: 'AI-powered vulnerability scanning and exploit generation for ethical hackers and security teams. OWASP Top 10, verified PoCs, and compliance reporting.'
+author: 'xeops'
+
+branding:
+  icon: 'shield'
+  color: 'red'
+
+inputs:
+  api-key:
+    description: 'Your XeOps API Key (get it at https://www.xeops.ai/dashboard/settings)'
+    required: true
+
+  scan-type:
+    description: 'Type of scan to perform (quick, standard, deep)'
+    required: false
+    default: 'standard'
+
+  fail-on-critical:
+    description: 'Fail the action if critical vulnerabilities are found'
+    required: false
+    default: 'true'
+
+  generate-exploits:
+    description: 'Generate exploit PoCs for found vulnerabilities'
+    required: false
+    default: 'false'
+
+  comment-pr:
+    description: 'Comment on PR with scan results'
+    required: false
+    default: 'true'
+
+outputs:
+  vulnerabilities-found:
+    description: 'Number of vulnerabilities found'
+
+  critical-count:
+    description: 'Number of critical vulnerabilities'
+
+  report-url:
+    description: 'URL to full security report'
+
+  scan-id:
+    description: 'Unique scan identifier'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    XEOPS_API_KEY: ${{ inputs.api-key }}
+    SCAN_TYPE: ${{ inputs.scan-type }}
+    FAIL_ON_CRITICAL: ${{ inputs.fail-on-critical }}
+    GENERATE_EXPLOITS: ${{ inputs.generate-exploits }}
+    COMMENT_PR: ${{ inputs.comment-pr }}

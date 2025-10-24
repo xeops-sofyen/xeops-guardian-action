@@ -1,0 +1,32 @@
+name: XeOps Guardian Security Scan
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main, master]
+
+jobs:
+  security-scan:
+    name: XeOps Guardian Analysis
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Full history for better analysis
+
+      - name: 🛡️ XeOps Guardian Scan
+        uses: xeops-ai/xeops-guardian@v1
+        with:
+          api-key: ${{ secrets.XEOPS_API_KEY }}
+          scan-type: 'standard'
+          fail-on-critical: 'true'
+          comment-pr: 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

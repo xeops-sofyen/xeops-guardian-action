@@ -1,0 +1,41 @@
+{
+  "name": "xeops-guardian-action",
+  "version": "0.1.4",
+  "description": "XeOps Guardian - AI Ethical Hacking for GitHub Actions",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xeops-sofyen/xeops-ai-public.git"
+  },
+  "keywords": [
+    "security",
+    "vulnerability",
+    "exploit",
+    "bug bounty",
+    "penetration testing",
+    "ethical hacking",
+    "cybersecurity",
+    "AI security",
+    "SAST",
+    "OWASP",
+    "compliance",
+    "red team",
+    "github-action"
+  ],
+  "author": "xeops",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "axios": "^1.4.0",
+    "@octokit/rest": "^19.0.11"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "eslint": "^8.43.0"
+  }
+}
